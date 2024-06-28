@@ -4,10 +4,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>200</y>
-      <w>210</w>
-      <h>140</h>
+      <x>260</x>
+      <y>190</y>
+      <w>240</w>
+      <h>220</h>
     </coordinates>
     <panel_attributes>_*Galaxy*_
 --
@@ -15,17 +15,26 @@
     Serial, Not Null
 --
 name: varchar(30)
-
-+3</panel_attributes>
+--
+abbreviation: varchar(30)
+--
+distance_from_mw_in_kly:
+   NUMERIC(6,2), NOT NULL
+--
+constellation: varchar(60)
+--
+size_in_ly: INT
+--
+visible_to_naked_eye: boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>660</x>
-      <y>210</y>
-      <w>210</w>
-      <h>160</h>
+      <y>220</y>
+      <w>220</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>_*Star*_
 --
@@ -36,16 +45,26 @@ name: varchar(30)
 --
 /galaxy_id:/
     Serial, Not Null
+--
+is_a_sun: boolean
+--
+kind_of_star: GKM
+--
 
-+2</panel_attributes>
+
+
+--
+diameter_in_km: INT
+--
+magnitude_in_v: NUMERIC(8,2)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>440</y>
-      <w>210</w>
+      <x>190</x>
+      <y>450</y>
+      <w>310</w>
       <h>190</h>
     </coordinates>
     <panel_attributes>_*Planet*_
@@ -57,17 +76,19 @@ name: varchar(30)
 --
 /star_id:/
      Serial, Not Null
-
-+2</panel_attributes>
+--
+planet_type_by_composition: varchar(30)
+--
+exoplanet_classification: DHJKLMNRTY</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>670</x>
-      <y>470</y>
+      <y>480</y>
       <w>210</w>
-      <h>160</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>_*Moon*_
 --
@@ -78,15 +99,16 @@ name: varchar(30)
 --
 /planet_id:/
     Serial, Not Null
+--
 
-+2</panel_attributes>
+--</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>490</x>
-      <y>240</y>
+      <y>250</y>
       <w>190</w>
       <h>330</h>
     </coordinates>
@@ -98,24 +120,41 @@ fg=red</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>490</x>
-      <y>230</y>
+      <y>220</y>
       <w>190</w>
-      <h>100</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=blue</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0;50.0;80.0;170.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;100.0;170.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>490</x>
-      <y>470</y>
+      <y>480</y>
       <w>200</w>
       <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=MAGENTA</panel_attributes>
     <additional_attributes>10.0;10.0;130.0;10.0;130.0;100.0;180.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1010</x>
+      <y>50</y>
+      <w>180</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>_KEY_
+ly - light years
+  kly - kilo lightyears
+pc - parsecs
+  kpc - kiloparsecs
+
+bg=green</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
