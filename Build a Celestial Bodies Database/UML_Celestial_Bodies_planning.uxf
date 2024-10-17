@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="15.1">
-  <zoom_level>9</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>81</x>
-      <y>234</y>
-      <w>216</w>
-      <h>225</h>
+      <x>96</x>
+      <y>184</y>
+      <w>192</w>
+      <h>216</h>
     </coordinates>
     <panel_attributes>_*Galaxy*_
 --
@@ -27,16 +27,19 @@ size_in_ly: INT
 --
 visible_to_naked_eye: boolean
 --
-shape: varchar(30)</panel_attributes>
+shape: varchar(30)
+--
+/constellation_id:/
+  serial</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>441</x>
-      <y>288</y>
-      <w>198</w>
-      <h>180</h>
+      <x>416</x>
+      <y>248</y>
+      <w>176</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>_*Star*_
 --
@@ -64,10 +67,10 @@ magnitude_in_v: NUMERIC(8,2)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>18</x>
-      <y>495</y>
-      <w>279</w>
-      <h>171</h>
+      <x>32</x>
+      <y>432</y>
+      <w>248</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>_*Planet*_
 --
@@ -87,10 +90,10 @@ exoplanet_classification: DHJKLMNRTY</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>522</y>
-      <w>189</w>
-      <h>153</h>
+      <x>424</x>
+      <y>456</y>
+      <w>168</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>_*Moon*_
 --
@@ -109,46 +112,46 @@ name: varchar(30)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>315</y>
-      <w>171</w>
-      <h>297</h>
+      <x>272</x>
+      <y>272</y>
+      <w>160</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=red</panel_attributes>
-    <additional_attributes>170.0;10.0;90.0;10.0;90.0;310.0;10.0;310.0</additional_attributes>
+    <additional_attributes>180.0;10.0;100.0;10.0;100.0;310.0;10.0;310.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>261</y>
-      <w>171</w>
-      <h>135</h>
+      <x>280</x>
+      <y>208</y>
+      <w>152</w>
+      <h>136</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=blue</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0;50.0;130.0;170.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;150.0;170.0;150.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>288</x>
-      <y>522</y>
-      <w>180</w>
-      <h>108</h>
+      <x>272</x>
+      <y>456</y>
+      <w>168</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=MAGENTA</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;10.0;130.0;100.0;180.0;100.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0;140.0;100.0;190.0;100.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>342</x>
-      <y>90</y>
-      <w>162</w>
-      <h>108</h>
+      <x>584</x>
+      <y>24</y>
+      <w>144</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>_KEY_
 ly - light years
@@ -158,5 +161,37 @@ pc - parsecs
 
 bg=green</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>632</y>
+      <w>168</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>_*Constellation*_
+--
+*PK constellation_id:*
+  Serial, Not Null
+--
+name: varchar(30)
+--
+description: varchar(60)
+--
+total_starts: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>368</y>
+      <w>128</w>
+      <h>312</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+fg=green</panel_attributes>
+    <additional_attributes>140.0;370.0;50.0;370.0;50.0;10.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
